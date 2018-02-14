@@ -1,0 +1,64 @@
+
+//HFILE
+
+#pragma once
+
+#include "GameFramework/GameMode.h"
+#include "nameGameMode.generated.h"
+
+
+UCLASS()
+class nameProject_API AnameGameMode : public AGameMode
+
+	GENERATED_BODY()
+
+	AnameGameMode();
+	
+	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EEndPlayReason) override;
+	virtual void Tick( float DeltaSeconds ) override;
+
+};
+
+//CPPFILE
+
+#include "nameGameModeBase.h"
+#include "nameProject.h"
+
+AnameGameMode::AnameGameMode() {
+
+	PrimaryActorTick.bCanEverTick = true;
+
+        GameSessionClass = nullptr;
+	GameStateClass = nullprt;
+	DefaultPawnClass = nullprt;
+	PlayerControllerClass = APlayerController::StaticClass();
+	//HUDClass = AM_HUD::StaticClass();
+	//PlayerStateClass = NULL;// CRASH ??
+	
+	UE_LOG(LogTemp, Warning, TEXT("=== nameGameMode::CTOR"));
+
+}
+
+
+void AnameGameMode::BeginPlay() {
+
+	UE_LOG(LogTemp, Warning, TEXT( "=== nameGameMode::BeginPlay") ) ;
+	Super::BeginPlay();
+
+}
+
+void AnameGameMode::EndPlay( const EEndPlayReason::Type EEndPlayReason ) {
+
+	UE_LOG(LogTemp, Warning, TEXT( "=== nameGameMode::EndPlay") ) ;
+	Super::EndPlay( EEndPlayReason );
+
+}
+
+void AnameGameMode::Tick( float DeltaTime ) {
+
+	Super::Tick( DeltaTime );
+
+}
+
+

@@ -1,0 +1,51 @@
+
+//HFILE
+
+#pragma once
+
+#include "GameFramework/Character.h"
+#include "nameChar.generated.h"
+
+UCLASS()
+class nameProject_API AnameChar : public ACharacter {
+
+	GENERATED_BODY()
+
+public:
+
+	AnameChar();
+	virtual void BeginPlay() override;
+	virtual void Tick( float DeltaSeconds ) override;
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	
+};
+
+//CPPFILE
+
+#include "nameChar.h"
+#include "nameProject.h"
+
+
+AnameChar::AnameChar() {
+
+ 	PrimaryActorTick.bCanEverTick = true;
+
+}
+
+void AnameChar::BeginPlay() {
+
+	Super::BeginPlay();
+	
+}
+
+void AnameChar::Tick( float DeltaTime ) {
+
+	Super::Tick( DeltaTime );
+
+}
+
+void AnameChar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
+
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+}

@@ -1,0 +1,63 @@
+
+//HFILE
+
+#pragma once
+
+#include "GameFramework/Actor.h"
+#include "nameActor.generated.h"
+
+UCLASS()
+class nameProject_API AnameActor : public AActor { 
+
+	GENERATED_BODY()
+
+	AnameActor();
+	virtual void OnConstruction(const FTransform& Transform) override;
+	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EEndPlayReason) override;
+	virtual void Tick( float DeltaSeconds ) override;
+
+//=================================
+
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+
+//	UFUNCTION()
+
+};
+
+//CPPFILE
+
+#include "nameActor.h"
+#include "nameProject.h"
+
+AnameActor::AnameActor() {
+
+	PrimaryActorTick.bCanEverTick = true;
+
+}
+
+void AnameActor::OnConstruction(const FTransform& Transform) {
+
+	UE_LOG(LogTemp, Warning, TEXT( "=== nameActor::OnConstruction") ) ;
+
+}
+
+void AnameActor::BeginPlay() {
+
+	UE_LOG(LogTemp, Warning, TEXT( "=== nameActor::BeginPlay") ) ;
+	Super::BeginPlay();
+
+}
+
+void AnameActor::EndPlay( const EEndPlayReason::Type EEndPlayReason ) {
+
+	Super::EndPlay( EEndPlayReason );
+
+}
+
+void AnameActor::Tick( float DeltaTime ) {
+
+	Super::Tick( DeltaTime );
+
+}
+

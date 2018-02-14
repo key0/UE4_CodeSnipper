@@ -1,0 +1,49 @@
+
+//HFILE
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "AIController.h"
+#include "nameAIC.generated.h"
+
+UCLASS()
+class nameProject_API AnameAIC : public AAIController {
+
+	GENERATED_BODY()
+	
+	virtual void Possess(class APawn* InPawn) override;
+	virtual void UnPossess() override;
+	//virtual void OnMoveCompleted( FAIRequestID RequestID, EPathFollowingResult::Type Result ) override;
+	
+//=================================
+
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+
+//	UFUNCTION()
+	
+};
+
+//CPPFILE
+
+#include "nameAIC.h"
+
+void AnameAIC::Possess(class APawn* InPawn) {
+
+	Super::Possess(InPawn);
+	
+	UE_LOG(LogTemp, Warning, TEXT("=== nameAIC::PosseD !, location: \t%f,\t%f,\t%f ")
+		, InPawn->GetActorLocation().X
+		, InPawn->GetActorLocation().Y
+		, InPawn->GetActorLocation().Z );
+
+
+}
+
+void AnameAIC::UnPossess() {
+
+	Super::UnPossess();
+	//BehaviorComp->StopTree();
+}
+
+

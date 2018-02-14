@@ -1,0 +1,75 @@
+
+//HFILE
+
+#pragma once
+
+#include "GameFramework/HUD.h"
+#include "AnameHUD.generated.h"
+
+UCLASS()
+class nameProject_API AnameHUD : public AHUD
+{
+	GENERATED_BODY()
+	
+	AnameHUD();
+	
+	protected:
+	
+	virtual void DrawHUD() override;
+	
+};
+
+//CPPFILE
+
+#include "nameHUD.h"
+#include "nameProject.h"
+
+
+AnameHUD::AnameHUD() {
+
+	UE_LOG(LogTemp, Warning, TEXT("=== CTOR::AnameHUD "));
+ 
+
+}
+
+void AnameHUD::DrawHUD() {
+	
+	Super::DrawHUD();
+    
+	if ( Canvas == nullptr ) return ;
+	auto pc = GetOwningPlayerController() ;
+	if ( pc == nullptr ) return ;
+
+	Canvas->DrawText(  GEngine->GetLargeFont()//GetSmallFont()
+					 , TEXT("___MENU___")
+					 , 100
+					 , 100						);
+					 
+	//_____Get New Mouse Position
+	//if ( pc->WasInputKeyJustPressed(EKeys::LeftMouseButton)) {
+	//	
+	//	 pc->GetMousePosition(mouseLocation.X, mouseLocation.Y);
+    //
+	//	 if (   mouseLocation.X > 100
+	//	  	 && mouseLocation.X < 100 + 200
+	//		 && mouseLocation.Y > 100
+	//		 && mouseLocation.Y < 100 + 20 
+	//		                               )
+	//		//isPressedRed = true;
+	//		 UE_LOG(LogTemp, Warning, TEXT("button RED pressed!!!"));
+    //
+	//	 if (   mouseLocation.X > 100
+	//		 && mouseLocation.X < 100 + 200
+	//		 && mouseLocation.Y > 130
+	//		 && mouseLocation.Y < 130 + 20
+	//									   )
+	//	     UE_LOG(LogTemp, Warning, TEXT("button BLUE pressed!!!"));
+	//}
+	
+    //FCanvasBoxItemProgressBar( FVector2D(5, 25), FVector2D(100, 5) );
+    //Canvas->DrawItem(ProgressBar);
+
+    //DrawRect(FLinearColor::Blue, 5, 25, 100, 5);
+
+}
+

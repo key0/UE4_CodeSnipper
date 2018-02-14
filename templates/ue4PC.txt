@@ -1,0 +1,49 @@
+
+//HFILE
+
+#pragma once
+
+#include "GameFramework/PlayerController.h"
+#include "namePC.generated.h"
+
+UCLASS()
+class nameProject_API AnamePC : public APlayerController { 
+
+	GENERATED_BODY()
+
+	AnamePC();
+	
+	virtual void BeginPlay() override;
+	
+//=================================
+
+//	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+
+//	UFUNCTION()
+
+};
+
+//CPPFILE
+
+#include "namePC.h"
+#include "nameProject.h"
+
+
+AnamePC::AnamePC() {
+
+	PrimaryActorTick.bCanEverTick = true;
+
+}
+
+void AnamePC::BeginPlay() {
+
+	UE_LOG(LogTemp, Warning, TEXT( "=== namePC::BeginPlay") ) ;
+	Super::BeginPlay();
+
+}
+
+
+
+
+
+

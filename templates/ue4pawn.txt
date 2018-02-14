@@ -1,0 +1,48 @@
+
+//HFILE
+#pragma once
+
+#include "GameFramework/Pawn.h"
+#include "namePawn.generated.h"
+
+UCLASS()
+class nameProject_API AnamePawn : public APawn {
+
+        GENERATED_BODY()
+
+public:
+	AnamePawn();
+
+    virtual void BeginPlay() override;
+	virtual void Tick( float DeltaSeconds ) override;
+	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+ };
+
+ //CPPFILE
+
+#include "namePawn.h"
+#include "nameProject.h"
+
+
+AnamePawn::AnamePawn() {
+
+ 	PrimaryActorTick.bCanEverTick = true;
+
+}
+
+void AnamePawn::BeginPlay() {
+
+	Super::BeginPlay();
+}
+
+void AnamePawn::Tick( float DeltaTime ) {
+
+	Super::Tick( DeltaTime );
+
+}
+
+void AnamePawn::SetupPlayerInputComponent(class UInputComponent* InputComponent) {
+
+        Super::SetupPlayerInputComponent(InputComponent);
+
+}
